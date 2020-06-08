@@ -8,20 +8,21 @@
   3、用户关闭会话之后，会自动提交事务
   4、系统崩溃或者断电的时候回回滚事务，也就是将数据恢复到上一个状态
 */
-insert into emp(empno,ename) values(2222,'zhangsan');
+
+
+
 --commit;
 --rollback;
-select * from emp;
+
+
 
 --savepoint  保存点
 --当一个操作集合中包含多条SQL语句，但是只想让其中某部分成功，某部分失败，此时可以使用保存点
 --此时如果需要回滚到某一个状态的话使用 rollback to sp1;
-delete from emp where empno = 1111;
-delete from emp where empno = 2222;
-savepoint sp1;
-delete from emp where empno = 1234;
-rollback to sp1;
-commit;
+
+
+
+
 /*
 事务的四个特性：ACID
   原子性：表示不可分割，一个操作集合要么全部成功，要么全部失败，不可以从中间做切分

@@ -15,16 +15,17 @@
 --insert into tablename values(val1,val2,....) 如果表名之后没有列，那么只能将所有的列都插入
 --insert into tablename(col1,col2,...) values(val1,val2,...) 可以指定向哪些列中插入数据
 
-insert into emp values(2222,'haha','clerk',7902,to_date('2019-11-2','YYYY-MM-dd'),1000,500,10);
-select * from emp;
+
 --向部分列插入数据的时候，不是想向哪个列插入就插入的，要遵循创建表的时候定义的规范
-insert into emp(empno,ename) values(3333,'wangwu')
+
 
 --创建表的其他方式
 --复制表同时复制表数据，不会复制约束
-create table emp2 as select * from emp;
+
+
 --复制表结构但是不复制表数据，不会复制约束
-create table emp3 as select * from emp where 1=2;
+
+
 --如果有一个集合的数据，把集合中的所有数据都挨条插入的话，效率如何？一般在实际的操作中，很少一条条插入，更多的是批量插入
 
 /*
@@ -33,12 +34,14 @@ create table emp3 as select * from emp where 1=2;
 
 */
 --删除满足条件的数据
-delete from emp2 where deptno = 10;
+
+
 --把整张表的数据全部清空
-delete from emp2;
+
+
 --truncate ,跟delete有所不同，delete在进行删除的时候经过事务，而truncate不经过事务，一旦删除就是永久删除，不具备回滚的操作
 --效率比较高，但是容易发生误操作，所以不建议使用
-truncate table emp2
+
 
 /*
 修改操作：
@@ -46,9 +49,12 @@ truncate table emp2
    可以更新或者修改满足条件的一个列或者多个列
 */
 --更新单列
-update emp set ename = 'heihei' where ename = 'hehe';
+
+
+
 --更新多个列的值
-update emp set job='teacher',mgr=7902 where empno = 15;
+
+
 
 
 /*
@@ -69,12 +75,3 @@ update emp set job='teacher',mgr=7902 where empno = 15;
     
     如果不保证事务的话，会造成脏读，不可重复读，幻读。
 */
-
-
-
-
-
-
-
-
-
